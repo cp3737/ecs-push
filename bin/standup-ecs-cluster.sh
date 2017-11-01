@@ -9,3 +9,4 @@ ecs-cli up \
   --size "$ECS_CLUSTER_SIZE" \
   --instance-type "$ECS_INSTANCE_TYPE"  \
   --port "$ECS_PORT" \
+  --force \

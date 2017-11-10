@@ -10,5 +10,7 @@ services:
       - "8000:8000"
     links:
       - db
+    labels:
+      kompose.service.type: loadbalancer
   db:
     image: postgres

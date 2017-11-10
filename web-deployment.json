@@ -1,0 +1,63 @@
+{
+  "kind": "Deployment",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "name": "web",
+    "creationTimestamp": null,
+    "labels": {
+      "io.kompose.service": "web"
+    },
+    "annotations": {
+      "kompose.cmd": "kompose -f docker-compose.yml convert -j",
+      "kompose.service.type": "loadbalancer",
+      "kompose.version": "1.4.0 (c7964e7)"
+    }
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "creationTimestamp": null,
+        "labels": {
+          "io.kompose.service": "web"
+        }
+      },
+      "spec": {
+        "volumes": [
+          {
+            "name": "web-claim0",
+            "persistentVolumeClaim": {
+              "claimName": "web-claim0"
+            }
+          }
+        ],
+        "containers": [
+          {
+            "name": "web",
+            "image": "django-web/",
+            "args": [
+              "/code/docker-entrypoint.sh"
+            ],
+            "ports": [
+              {
+                "containerPort": 8000
+              }
+            ],
+            "resources": {},
+            "volumeMounts": [
+              {
+                "name": "web-claim0",
+                "mountPath": "/foo"
+              }
+            ]
+          }
+        ],
+        "restartPolicy": "Always"
+      }
+    },
+    "strategy": {
+      "type": "Recreate"
+    }
+  },
+  "status": {}
+}

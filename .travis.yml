@@ -3,8 +3,8 @@ sudo: required
 services:
   - docker
 before_install:
-  - ./bin/config-ecs-cli.sh
+  - ./bin/install-k8stools.sh
 script:
   - ./bin/test-proj.sh
 after_success:
-  - ./bin/docker-push.sh
+  - ./bin/run-kube.sh

@@ -1,0 +1,32 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "web",
+    "creationTimestamp": null,
+    "labels": {
+      "io.kompose.service": "web"
+    },
+    "annotations": {
+      "kompose.cmd": "kompose -f docker-compose.yml convert -j",
+      "kompose.service.type": "loadbalancer",
+      "kompose.version": "1.4.0 (c7964e7)"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "http",
+        "port": 80,
+        "targetPort": 8000
+      }
+    ],
+    "selector": {
+      "io.kompose.service": "web"
+    },
+    "type": "LoadBalancer"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

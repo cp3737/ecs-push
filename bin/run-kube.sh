@@ -11,6 +11,7 @@ cp cluster.cfg ${HOME}/.kube/config
 kubectl config set clusters.sonya.foo.today.certificate-authority-data "$CERTAUTH"
 kubectl config set users.sonya.foo.today.client-certificate-data "$CLIENTDATA"
 kubectl config set users.sonya.foo.today.client-key-data "$CLIENTKEY"
+kubectl config set users.sonya.foo.today.password "$KUBE_PASSWORD"
 
 
 kubectl --insecure-skip-tls-verify=true create -f web-claim0-persistentvolumeclaim.json

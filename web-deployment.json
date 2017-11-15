@@ -34,7 +34,7 @@
         "containers": [
           {
             "name": "web",
-            "image": "django-web/",
+            "image": "smcp42309/django-web",
             "args": [
               "/code/docker-entrypoint.sh"
             ],

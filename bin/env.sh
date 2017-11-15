@@ -11,4 +11,5 @@ export AWS_KEYPAIR=hackor_public
 export KEYPAIR=hackor_public
 export KEYNAME=hackor_public
 export DOCKER_REPO=smcp42309
+export DOCKER_USERNAME=smcp42309
 export DOCKER_WEB_IMAGE=django-web

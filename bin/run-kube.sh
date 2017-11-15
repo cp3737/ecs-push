@@ -4,7 +4,7 @@ source ./bin/env-kube.sh
 docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
 docker push "$DOCKER_REPO"/"$DOCKER_WEB_IMAGE":latest
 
-mkdir ${HOME}/.kube
+mkdir -p ${HOME}/.kube
 cp cluster.cfg ${HOME}/.kube/config
 
 kubectl config set clusters.sonya.foo.today.certificate-authority-data "$CERTAUTH"

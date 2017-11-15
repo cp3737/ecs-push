@@ -11,6 +11,6 @@ kubectl config set users.sonya.foo.today.client-certificate-data "$CLIENTDATA"
 kubectl config set users.sonya.foo.today.client-key-data "$CLIENTKEY"
 
 
-kubectl create -f web-claim0-persistentvolumeclaim.json
-kubectl create -f web-deployment.json
-kubectl create -f web-service.json
+kubectl --insecure-skip-tls-verify=true create -f web-claim0-persistentvolumeclaim.json
+kubectl --insecure-skip-tls-verify=true create -f web-deployment.json
+kubectl --insecure-skip-tls-verify=true create -f web-service.json

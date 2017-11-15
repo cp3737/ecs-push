@@ -1,4 +1,5 @@
 #! /bin/bash
+source ./bin/env.sh
 source ./bin/env-kube.sh
 
 docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
